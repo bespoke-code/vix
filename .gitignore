@@ -38,3 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+
+# Datasets for the AI and Neural Networks
+pyvix/datasets
+
+# Python compiled files
+*.pyc

@@ -17,6 +17,8 @@ TODO: Describe the installation process
 
 ## Usage
 
+We use [this NASA JSON metadata file](https://data.nasa.gov/data.json) as our main dataset and data extraction point.
+
 TODO: Add usage instructions
 
 ## Contributing
