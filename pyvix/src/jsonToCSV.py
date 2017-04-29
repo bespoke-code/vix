@@ -1,16 +1,18 @@
 import json
 import csv
-import parser
+import argparse
 
 def init():
-    pass
+    parser=argparse.ArgumentParser(description="A JSON to CSV file parser.")
+    parser.add_argument('inputFile', metavar='inputFile', help='A JSON-formatted input file.')
+    parser.add_argument('outputFile', metavar='outputFile', help='A pathname for storing the output file.')
+    return parser
 
 def jsonToCSV(jsonFile):
-    Pass
+    inputFile = json.load(jsonFile)
 
-def saveJSON(json):
-    pass
+    csvFile = csv.W
 
 if __name__ == '__main__':
-    jsonToCSV()
-    saveJSON()
+    args = init().parse_args()
+    jsonToCSV(args.inputFile, args.outputFile)
