@@ -1,5 +1,6 @@
 import json
-
+import math
+import re
 def temporalFilter(dataList, startTime, endTime):
     filteredData = []
     matchesFound = 0
@@ -8,15 +9,23 @@ def temporalFilter(dataList, startTime, endTime):
         continue
     return filteredData
 
-def spatialFilter(dataList, inputCoordinates):
+
+def spatialFilter(dataList, inputCoordinates, offset=0):
     filteredData = []
     matchesFound = 0
     for dataElement in dataList:
-        # TODO: Code this part, pls
-        continue
-    return filteredData
+        # Coordinates are given in degrees
+        dataElementCoords = re.split(', | ',dataElement['spatial'])
+        if math.sqrt(
+                (dataElementCoords[0] - inputCoordinates['lat'])**2 +
+                (dataElementCoords[1] - inputCoordinates['lon'])**2
+                ) <= 100:
+                matchesFound+=1
+        if matchesFound > 0:
+            filteredData.append(dataElement)
+    return filteredData[offset * 10:(1 + offset) * 10]
 
-def keyWordFilter(dataList, inputKeywords):
+def keyWordFilter(dataList, inputKeywords, offset=0):
     filteredData = []
     matchesFound=0
     for dataElement in dataList:
@@ -26,7 +35,7 @@ def keyWordFilter(dataList, inputKeywords):
         if matchesFound > 0:
             filteredData.append(dataElement)
         matchesFound=0
-    return filteredData
+    return filteredData[offset*10:(1+offset)*10]
 
 def filter(jsonFile, isSpatial, isTemporal, isKeyword, searchQuery, offset=0):
 
