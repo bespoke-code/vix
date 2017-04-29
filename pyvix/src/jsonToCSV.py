@@ -2,7 +2,7 @@ import json
 import csv
 import argparse
 import sys
-
+import numpy
 
 def init():
     parser = argparse.ArgumentParser(
@@ -45,20 +45,20 @@ def jsonToCSV(jsonFile, outputCSV):
     for i in range(len(datasets)):
         if i == 0:
             csvWriter.writeheader()
-        for profession in professions:
-            csvWriter.writerow(
-                {
-                    'Dataset Name': datasets[i]["title"],
-                    'Keywords': datasets[i]["keyword"],
-                    'Theme': datasets[i]["theme"],
-                    'Profession': profession,
-                    'Recommendation': '0'
-                }
-            )
+        else:
+            for profession in professions:
+                csvWriter.writerow(
+                    {
+                        'Dataset Name': datasets[i]["title"],
+                        'Keywords': datasets[i]["keyword"],
+                        'Theme': datasets[i]["theme"],
+                        'Profession': profession,
+                        'Recommendation': str((numpy.random.RandomState().get_state()[1][0])%100)
+                    }
+                )
     datasetJSON.close()
 ##############################################################################
 if __name__ == '__main__':
     #args = init().parse_args()
     #jsonToCSV(args.inputFile, args.outputFile)
     jsonToCSV("/home/andrej/git/vix/pyvix/datasets/data-nasa-subset.json", "/home/andrej/git/vix/pyvix/datasets/data-nasa-subset.csv")
-    #print(data["dataset"][0].keys())

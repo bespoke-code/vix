@@ -1,17 +1,27 @@
-import json
 import math
 import re
 import datetime
-def temporalFilter(dataList, startTime, endTime):
+
+
+def temporalFilter(dataList, startTime=datetime.datetime(2017, 4, 27), endTime=datetime.timedelta(1), offset=0):
+    if (endTime == datetime.timedelta(1)):
+        endTime += startTime
     filteredData = []
     matchesFound = 0
     for dataElement in dataList:
-        # TODO: Code this part, pls
-        dataEL = re.split('\R/|\T|[- :]|\/P1Y', dataElement['temporal'])
+        dataEL = re.split('R|T|[- :]|/P1Y|Z|/', dataElement['temporal'])
 
-        if (datetime.datetime(int(dataEL[0]),int(dataEL[1]),int(dataEL[2]),int(dataEL[3]), int(dataEL[4])) - )
-        continue
-    return filteredData
+        if (dataEL[0] == ''):
+            dataEL[0] = dataEL[1]
+            dataEL[1] = dataEL[2]
+            dataEL[2] = dataEL[3]
+
+        if (endTime - datetime.datetime(int(dataEL[0]), int(dataEL[1]), int(dataEL[2]))) > datetime.timedelta(0):
+            if (datetime.datetime(int(dataEL[0]), int(dataEL[1]), int(dataEL[2])) - startTime >= datetime.timedelta(0)):
+                matchesFound += 1
+        if matchesFound > 0:
+            filteredData.append(dataElement)
+    return filteredData[offset * 10:(1 + offset) * 10]
 
 
 def spatialFilter(dataList, inputCoordinates, offset=0):
@@ -29,9 +39,10 @@ def spatialFilter(dataList, inputCoordinates, offset=0):
             filteredData.append(dataElement)
     return filteredData[offset * 10:(1 + offset) * 10]
 
+
 def keyWordFilter(dataList, inputKeywords, offset=0):
     filteredData = []
-    matchesFound=0
+    matchesFound = 0
     for dataElement in dataList:
         for keyword in inputKeywords:
             if keyword in dataElement["keyword"]:
