@@ -41,7 +41,7 @@ captures/
 *.jks
 
 # Datasets for the AI and Neural Networks
-pyvix/datasets
+pyvix/datasets/data-nasa.json
 
 # Python compiled files
 *.pyc
