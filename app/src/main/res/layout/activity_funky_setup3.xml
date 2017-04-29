@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.andrej.vix.FunkySetup3">
+
+<LinearLayout
+    android:layout_width="368dp"
+    android:layout_height="670dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteY="-61dp"
+    tools:layout_editor_absoluteX="8dp"
+    android:gravity="center"
+    >
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="Do you have a nickname, I feel
+kinda meh..calling you human?"
+        />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="20dp"
+        android:textAlignment="center"
+
+        android:layout_height="wrap_content"
+        android:text="Where are you from?"
+        />
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where are you now?"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        />
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What do you do for living?"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        />
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do you have any hobbies?"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        />
+    />
+    <Spinner
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="90dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn4"
+        android:text="Aaand I'm done"
+        android:textColor="#000"
+
+        android:textSize="15dp"
+        tools:layout_editor_absoluteY="431dp"
+        tools:layout_editor_absoluteX="92dp" />
+
+
+
+</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
