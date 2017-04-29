@@ -1,11 +1,15 @@
 import json
 import math
 import re
+import datetime
 def temporalFilter(dataList, startTime, endTime):
     filteredData = []
     matchesFound = 0
     for dataElement in dataList:
         # TODO: Code this part, pls
+        dataEL = re.split('\R/|\T|[- :]|\/P1Y', dataElement['temporal'])
+
+        if (datetime.datetime(int(dataEL[0]),int(dataEL[1]),int(dataEL[2]),int(dataEL[3]), int(dataEL[4])) - )
         continue
     return filteredData
 
