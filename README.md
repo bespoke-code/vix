@@ -11,27 +11,30 @@ Your challenge is to design an artificial intelligence tool to help Earth scienc
 
 Full details about the challenge can be found [on the official 2017 NASA Space Apps Challenge site.](https://2017.spaceappschallenge.org/challenges/ideate-and-create/data-concierge/details)
 
-## Installation
+## About our solution
 
-TODO: Describe the installation process
-
-## Usage
+We love those who do research. Our goal is to provide them with the best datasets possible for them to do it. There comes Vix - our personal data concierge.
 
 We use [this NASA JSON metadata file](https://data.nasa.gov/data.json) as our main dataset and data extraction point.
 
-TODO: Add usage instructions
+Vix aims to improve users' ability to search quickly and effectively through the vast number of NASA datasets using multiple smart systems:
+- Dataset Filters (temporal, spatial and keyword filters)
+- Neural Network (using 
+
+Vix can also recommend datasets based on your personal preferences, and take other users' dataset ratings into account.
 
 ## Contributing
 
-1. Fork it!
+0. Share your ideas with us and get in touch!
+1. Fork the project!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
+4. Push to the branch: `git push origin my-new-feature`s
 5. Submit a pull request :D
 
 ## History
 
-TODO: Write history
+Vix is a project developed during the 2017 NASA Space Apps Challenge. It was fun!
 
 ## Authors
 * Andrej Georgievski - [*bespoke-code*](https://github.com/bespoke-code)

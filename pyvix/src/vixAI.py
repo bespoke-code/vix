@@ -10,7 +10,7 @@ def main():
     numpy.random.seed(seed)
     # load dataset
     dataset = numpy.loadtxt("../datasets/data-nasa-subset.csv", delimiter=",")
-    # split dataset into input(X) and output(Y) variables
+    # split dataset into input(x) and output(y) variables
     x = dataset[:, 1:3]
     y = dataset[:, 4]
     # CREATE MODEL
