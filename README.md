@@ -19,7 +19,7 @@ We use [this NASA JSON metadata file](https://data.nasa.gov/data.json) as our ma
 
 Vix aims to improve users' ability to search quickly and effectively through the vast number of NASA datasets using multiple smart systems:
 - Dataset Filters (temporal, spatial and keyword filters)
-- Neural Network (using 
+- Neural Network (using KERAS)
 
 Vix can also recommend datasets based on your personal preferences, and take other users' dataset ratings into account.
 
