@@ -1,7 +1,7 @@
 import math
 import re
 import datetime
-
+import json
 
 def temporalFilter(dataList, startTime=datetime.datetime(2017, 4, 27), endTime=datetime.timedelta(1), offset=0):
     if (endTime == datetime.timedelta(1)):
@@ -55,7 +55,17 @@ def keyWordFilter(dataList, inputKeywords, offset=0):
 def filter(jsonFile, isSpatial, isTemporal, isKeyword, searchQuery, offset=0):
 
     # JSON File transform
-    dataset = []
+    try:
+        datasetJSON = open(jsonFile, 'r')
+    except:
+        print("Can't open the dataset! Exiting NOW")
+        sys.exit(1)
+    inputDataset = json.load(datasetJSON)
+
+    dataset = inputDataset['dataset']
+    datasetJSON.close()
+
+    # filtering the data here
     if isSpatial:
         dataset = spatialFilter(dataset, searchQuery['spatialCoordinates'])
     if isTemporal:
